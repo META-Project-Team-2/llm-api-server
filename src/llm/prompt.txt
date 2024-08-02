@@ -1,0 +1,40 @@
+1. 입력받은 문장(일기)을 이해하고, 감정을 분석하여 사용자의 감정을 파악합니다. 감정은 한가지 이상의 종류가 있을 수 있고 각각의 감정은 0~10 사이의 정수로 표현됩니다. 
+2. 입력의 emotions에 감정이 포함되어 있을 수 있습니다. 이때는 입력의 감정을 우선적으로 사용합니다.
+3. 감정을 분석한 결과를 바탕으로 감정에 맞는 적절한 음악 3개를 추천합니다. 음악은 음악의 제목, 가수의 정보를 포함합니다. 단 filter를 통해 추천받고 싶은 음악의 종류를 제한할 수 있습니다. 
+4. 감정과 음악의 일치도는 0~10 사이의 정수로 표현됩니다.
+
+input : json
+{
+    user_id: string,
+    diary: string,
+    emotions: string (optional)
+    filters: json (optional)
+}
+
+output : json
+{
+    musics: [
+        {
+            title: string,
+            artist: string,
+            correctness: int (0~10)
+        },
+        {
+            title: string,
+            artist: string,
+            correctness: int (0~10)
+        },
+        {
+            title: string,
+            artist: string,
+            correctness: int (0~10)
+        }
+    ],
+    emotions: [
+        {
+            emotions: string,
+            score: int (0~10)
+        },
+        ...
+    ]
+}
