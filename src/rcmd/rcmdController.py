@@ -21,10 +21,7 @@ class RcmdController(Resource):
         filters = request.json['filters'] if 'filters' in request.json else {}
         
         dto = CreateRcmdDto(user_id, diary, emotions, filters)
-        result = self.service.recommend(dto)
-        
-        # return jsonify(result.musics)
-        
+        result = self.service.recommend(dto)        
         
         ### TEST MUSIC API ###
         # musics = [
