@@ -9,20 +9,28 @@
 ```json
 {
     "user_id": "string",
-    "diary": "string",
-    "emotions": ["string", ...] (optional),
-    "filters": {
-        ... (optional)
-    }
+    "diary": "string"
 }
 ```
 #### Response format
 ```json
 {
     "musics": [
-        ...
+        {
+            "title": "string",
+            "artist": "string",
+            "url": "string"
+        },
+        {
+            "title": "string",
+            "artist": "string",
+            "url": "string"
+        },
+        {
+            "title": "string",
+            "artist": "string",
+            "url": "string"
+        }
     ]
 }
 ```
-
-### PUT /rcmd/openai
