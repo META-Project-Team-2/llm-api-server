@@ -4,6 +4,7 @@
 4. 감정과 음악의 일치도는 0~10 사이의 정수로 표현됩니다.
 
 input : json
+```json
 {
     user_id: string,
     diary: string,
@@ -11,7 +12,10 @@ input : json
     filters: json (optional)
 }
 
+```
+
 output : json
+```json
 {
     musics: [
         {
@@ -38,3 +42,4 @@ output : json
         ...
     ]
 }
+```
