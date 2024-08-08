@@ -1,12 +1,20 @@
 from src.config import *
 from flask import *
 from flask_restx import Api, Resource
-from src.rcmd.rcmdController import namespace as rcmdNamespace
+from src.rcmd.rcmdController import api as rcmdNamespace
 
-app = Flask(__name__)
-api = Api(app)
+def create_app():
+    app = Flask(__name__)
+    api = Api(
+        app=app,
+        version='1.0',
+        title='Music Recommendation API with LLM',
+        doc='/docs'
+    )
+    api.add_namespace(rcmdNamespace)
+    return app
 
-api.add_namespace(rcmdNamespace, path='/api/rcmd')
 
 if __name__ == '__main__':
-    app.run(port=PORT, debug=DEBUG)
+    app = create_app()
+    app.run(host='0.0.0.0', port=PORT, debug=DEBUG)
